@@ -1,0 +1,50 @@
+﻿@page
+@model Ecommerce.pages.items.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>General_item_layout</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="General_item_layout.Id" />
+            <div class="form-group">
+                <label asp-for="General_item_layout.DB_id" class="control-label"></label>
+                <input asp-for="General_item_layout.DB_id" class="form-control" />
+                <span asp-validation-for="General_item_layout.DB_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="General_item_layout.Dateofproduction" class="control-label"></label>
+                <input asp-for="General_item_layout.Dateofproduction" class="form-control" />
+                <span asp-validation-for="General_item_layout.Dateofproduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="General_item_layout.Price" class="control-label"></label>
+                <input asp-for="General_item_layout.Price" class="form-control" />
+                <span asp-validation-for="General_item_layout.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="General_item_layout.rating" class="control-label"></label>
+                <input asp-for="General_item_layout.rating" class="form-control" />
+                <span asp-validation-for="General_item_layout.rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
